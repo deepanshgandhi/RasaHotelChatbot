@@ -39,6 +39,13 @@ nlu:
     - I want [4](nrooms) rooms
     - I think [5](nrooms) rooms
 
+- intent: want_n_rooms
+  examples: |
+    - I want to book [2](nrooms) rooms
+    - Hey, want to book [5](nrooms) rooms
+    - How do I book [3](nrooms) rooms?
+    - Need [6](nrooms) rooms
+
 - intent: clean_time
   examples: |
     - Could you send someone after [1](time) hour?
@@ -55,6 +62,13 @@ nlu:
     - I want room cleaning service after [3](time) hours.
     - Room cleaning in [5] hours please
     - I want my room clean after [4](time) hours.
+
+- intent: room_cleaned_now
+  examples: |
+    - I want to have my room cleaned now
+    - Please get my room cleaned as soon as possible
+    - Get my room cleaned right now
+    - Need room cleaning as soon as possible
 
 - intent: affirm
   examples: |
@@ -154,6 +168,9 @@ nlu:
     - When can I come?
     - When can I enter my room?
     - check-in time?
+    - check-in time
+    - check-in timings need info
+    - check in time please
 
 - intent: check_out_time
   examples: |
@@ -162,12 +179,16 @@ nlu:
     - When do I leave?
     - When can am I supposed to leave?
     - check-out time?
+    - check-out time
+    - check-out timings need info
+    - check out time please
 
 - intent: cancel_reservation
   examples: |
     - How do I cancel a reservation?
     - How to cancel?
     - How can I cancel my reservation?
+    - How am I supposed to cancel
 
 - intent: cancellation_policy
   examples: |
@@ -180,21 +201,29 @@ nlu:
     - Does the hotel have a restaurant?
     - Where is the restaurant?
     - Is there a restaurant?
+    - do you have a restaurant
 
 - intent: breakfast_availability
   examples: |
     - does the hotel offer breakfast
     - do you give breakfast
     - what about breakfast
+    - do you give breakfast
+    - is there breakfast at the hotel
 
 - intent: breakfast_timings
   examples: |
     - what are the breakfast timings?
     - timings for breakfast?
     - what time is the breakfast available
+    - when will breakfast be available
+    - when can I eat breakfast
 
 - intent: restaurant_timings
   examples: |
     - What are the timings of your restaurant?
     - restaurant timings?
     - what time does the restaurant open?
+    - when will the restaurant open
+    - timings for the restaurant
+    - when does the restaurant close

@@ -2,6 +2,26 @@ version: "2.0"
 
 stories:
 
+- story: book_n_simple_room
+  steps:
+  - intent: want_n_rooms
+    entities:
+    - nrooms: 2
+  - action: utter_kind_of_room
+  - intent: simple_room
+  - action: utter_simple
+  - action: utter_goodbye
+
+- story: book_n_deluxe_room
+  steps:
+  - intent: want_n_rooms
+    entities:
+    - nrooms: 2
+  - action: utter_kind_of_room
+  - intent: deluxe_room
+  - action: utter_deluxe
+  - action: utter_goodbye
+
 - story: book_simple_room
   steps:
   - intent: want_room
@@ -12,6 +32,12 @@ stories:
   - action: utter_kind_of_room
   - intent: simple_room
   - action: utter_simple
+  - action: utter_goodbye
+
+- story: clean_room_now_now
+  steps:
+  - intent: room_cleaned_now
+  - action: utter_room_clean_now
   - action: utter_goodbye
 
 - story: clean_room_now

@@ -25,6 +25,9 @@ intents:
   - clean_time
   - room_cleaned_time
   - number_of_rooms
+  - want_n_rooms
+  - rest
+  - room_cleaned_now
 
 entities:
   - nrooms
