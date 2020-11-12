@@ -1,0 +1,54 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Check-in time
+  steps:
+  - intent: check_in_time
+  - action: utter_check_in
+
+- rule: Check-out time
+  steps:
+  - intent: check_out_time
+  - action: utter_check_out
+
+- rule: Cancel reservation
+  steps:
+  - intent: cancel_reservation
+  - action: utter_cancel_res1
+  - action: utter_cancel_res2
+
+- rule: Cancellation policy
+  steps:
+  - intent: cancellation_policy
+  - action: utter_cancel_policy
+
+- rule: Restaurant
+  steps:
+  - intent: rest
+  - action: utter_restaurant
+  
+- rule: Breakfast Availability
+  steps:
+  - intent: breakfast_availability
+  - action: utter_breakfast_a
+
+- rule: Breakfast timings
+  steps:
+  - intent: breakfast_timings
+  - action: utter_br_time
+
+- rule: Restaurant timings
+  steps:
+  - intent: restaurant_timings
+  - action: utter_rest_time

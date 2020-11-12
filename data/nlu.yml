@@ -1,0 +1,187 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: inform
+  examples: |
+    - [Sitka](location)
+    - [Juneau](location)
+    - [San Francisco](location)
+
+- intent: search_provider
+  examples: |
+    - I need a [hospital](facility_type)
+    - find me a nearby [hospital](facility_type)
+    - find me a nearby [hospital](facility_type) in [San Francisco](location)
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: room_cleaned
+  examples: |
+    - I want to have my room cleaned
+    - Need to get my room cleaned
+    - Can you please get my room cleaned
+    - Clean my room
+    - Room needs to be cleaned
+
+- intent: clean_now
+  examples: |
+    - Send someone now
+    - Can you send someone right now?
+    - Please send someone now
+    - Send someone right now
+
+- intent: want_room
+  examples: |
+    - I want to book a room
+    - I want a room
+    - Hey, need to book a room
+    - Could you help me book a room
+    - Help me book a room
+
+- intent: simple_room
+  examples: |
+    - Simple
+
+- intent: deluxe_room
+  examples: |
+    - Deluxe
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: check_in_time
+  examples: |
+    - What are your check-in timings?
+    - check-in timings?
+    - When can I come?
+    - When can I enter my room?
+    - check-in time?
+
+- intent: check_out_time
+  examples: |
+    - What are your check-out timings?
+    - check-out timings?
+    - When do I leave?
+    - When can am I supposed to leave?
+    - check-out time?
+
+- intent: cancel_reservation
+  examples: |
+    - How do I cancel a reservation?
+    - How to cancel?
+    - How can I cancel my reservation?
+
+- intent: cancellation_policy
+  examples: |
+    - What is your cancellation policy?
+    - What happens if I cancel?
+    - Tell me more about the cancellation policy
+
+- intent: rest
+  examples: |
+    - Does the hotel have a restaurant?
+    - Where is the restaurant?
+    - Is there a restaurant?
+
+- intent: breakfast_availability
+  examples: |
+    - does the hotel offer breakfast
+    - do you give breakfast
+    - what about breakfast
+
+- intent: breakfast_timings
+  examples: |
+    - what are the breakfast timings?
+    - timings for breakfast?
+    - what time is the breakfast available
+
+- intent: restaurant_timings
+  examples: |
+    - What are the timings of your restaurant?
+    - restaurant timings?
+    - what time does the restaurant open?

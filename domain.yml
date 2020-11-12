@@ -1,0 +1,117 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - inform
+  - search_provider
+  - want_room
+  - simple_room
+  - deluxe_room
+  - room_cleaned
+  - clean_now
+  - check_in_time
+  - check_out_time
+  - cancel_reservation
+  - cancellation_policy
+  - breakfast_availability
+  - breakfast_timings
+  - restaurant_timings
+
+entities:
+  - location
+  - facility_type
+
+slots:
+  location:
+    type: text
+  facility_type:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_when_to_clean:
+  - text: "When should I arrange for a cleaning?"
+  
+  utter_room_clean_now:
+  - text: "Sure, I will send someone to your room right away"
+
+  utter_kind_of_room:
+  - text: "What type of room would you want to book"
+    buttons:
+      - title: "Simple"
+        payload: "/simple_room"
+      - title: "Deluxe"
+        payload: "/deluxe_room"
+  
+  utter_simple:
+  - text: "You have chosen to book a simple room"
+
+  utter_deluxe:
+  - text: "You have chosen to book a deluxe room"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_how_can_i_help:
+  - text: "I can help you find nearest hospital. Ask."
+
+  utter_ask_location:
+  - text: "To find the nearest {facility_type} I need your address."
+  
+  utter_check_in:
+  - text: "Check-in time starts at 4 PM. Minimum check-in age is 21. Please contact the reception for early check-in requests."
+
+  utter_check_out:
+  - text: "Check-out time is 11 AM. Please contact the reception for late checkout requests."
+  
+  utter_cancel_res1:
+  - text: "To cancel a reservation, select the “Reservations” link from the homepage."
+
+  utter_cancel_res2:
+  - text: "On the Reservations page, under the heading ‘View, Change or Cancel a Reservation,’ enter your confirmation number, and either the last name on the reservation or the last four digits of the credit card used to make the reservation."
+  
+  utter_cancel_policy:
+  - text: "The booking deposit is refundable if the cancellation occurs at least 15 days before arrival. For cancellations made after this limit, a penalty will be imposed based on the cancellation policy."
+
+  utter_restaurant:
+  - text: "Yes, the hotel has a restaurant called the Zephyr Bar. With our menu we strive to reflect the historic art and the spirit of our neighborhood by offering a glimpse into what makes our area unique."
+
+  utter_breakfast_a:
+  - text: "The hotel provides its guests with a free made-to-order breakfast each morning."
+
+  utter_br_time:
+  - text: "Monday through Friday breakfast is 6 am to 9 am. On Saturday and Sunday, we are open from 7 am to 10:30 am."
+
+  utter_rest_time:
+  - text: "Our restaurant serves a dazzling 24-hour menu."
+  
+   
+
+actions:
+  - action_facility_search
+  - action_check_weather
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
