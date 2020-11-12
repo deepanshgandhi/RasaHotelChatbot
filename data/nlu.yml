@@ -31,17 +31,30 @@ nlu:
     - bye bye
     - see you later
 
-- intent: inform
+- intent: number_of_rooms
   examples: |
-    - [Sitka](location)
-    - [Juneau](location)
-    - [San Francisco](location)
+    - [2](nrooms) rooms
+    - [1](nrooms) room
+    - [3](nrooms)
+    - I want [4](nrooms) rooms
+    - I think [5](nrooms) rooms
 
-- intent: search_provider
+- intent: clean_time
   examples: |
-    - I need a [hospital](facility_type)
-    - find me a nearby [hospital](facility_type)
-    - find me a nearby [hospital](facility_type) in [San Francisco](location)
+    - Could you send someone after [1](time) hour?
+    - Could you send someone after [2](time) hours?
+    - Could you send someone after [3](time) hours?
+    - Could you send someone after [4](time) hours?
+    - Could you send someone after [5](time) hours?
+    - In [6](time) hours?
+    - Please send after [7](time) hours
+
+- intent: room_cleaned_time
+  examples: |
+    - I want to have my room cleaned in [1](time) hour.
+    - I want room cleaning service after [3](time) hours.
+    - Room cleaning in [5] hours please
+    - I want my room clean after [4](time) hours.
 
 - intent: affirm
   examples: |

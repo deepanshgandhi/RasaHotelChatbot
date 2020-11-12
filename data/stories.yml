@@ -2,16 +2,13 @@ version: "2.0"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: action_check_weather
-
 - story: book_simple_room
   steps:
   - intent: want_room
+  - action: utter_number_of_rooms
+  - intent: number_of_rooms
+    entities:
+    - nrooms: 2
   - action: utter_kind_of_room
   - intent: simple_room
   - action: utter_simple
@@ -25,30 +22,34 @@ stories:
   - action: utter_room_clean_now
   - action: utter_goodbye
 
+- story: clean_room_time
+  steps:
+  - intent: room_cleaned
+  - action: utter_when_to_clean
+  - intent: clean_time
+    entities:
+    - time: 5
+  - action: action_return_time
+  - action: utter_goodbye
+
+- story: clean_room_time_2
+  steps:
+  - intent: room_cleaned_time
+    entities:
+    - time: 5
+  - action: action_return_time
+  - action: utter_goodbye
+
 - story: book_deluxe_room
   steps:
   - intent: want_room
+  - action: utter_number_of_rooms
+  - intent: number_of_rooms
+    entities:
+    - nrooms: 2
   - action: utter_kind_of_room
   - intent: deluxe_room
   - action: utter_deluxe
   - action: utter_goodbye
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye

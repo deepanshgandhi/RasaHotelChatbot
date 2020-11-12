@@ -22,16 +22,24 @@ intents:
   - breakfast_availability
   - breakfast_timings
   - restaurant_timings
+  - clean_time
+  - room_cleaned_time
+  - number_of_rooms
 
 entities:
-  - location
-  - facility_type
+  - nrooms
+  - time
 
 slots:
-  location:
-    type: text
-  facility_type:
-    type: text
+  nrooms:
+    type: float
+    min_value: 1.0
+    max_value: 10.0
+
+  time:
+    type: float
+    min_value: 1.0
+    max_value: 12.0
 
 responses:
   utter_greet:
@@ -43,6 +51,9 @@ responses:
   utter_room_clean_now:
   - text: "Sure, I will send someone to your room right away"
 
+  utter_number_of_rooms:
+  - text: "How many rooms would you like to book"
+
   utter_kind_of_room:
   - text: "What type of room would you want to book"
     buttons:
@@ -51,11 +62,14 @@ responses:
       - title: "Deluxe"
         payload: "/deluxe_room"
   
+  utter_room_clean_time:
+  - text: "Sure, I have scheduled a cleaning in {time} hours"
+
   utter_simple:
-  - text: "You have chosen to book a simple room"
+  - text: "You have chosen to book {nrooms} simple room(s)"
 
   utter_deluxe:
-  - text: "You have chosen to book a deluxe room"
+  - text: "You have chosen to book {nrooms} deluxe room(s)"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -106,11 +120,8 @@ responses:
   utter_rest_time:
   - text: "Our restaurant serves a dazzling 24-hour menu."
   
-   
-
 actions:
-  - action_facility_search
-  - action_check_weather
+  - action_return_time
 
 session_config:
   session_expiration_time: 60

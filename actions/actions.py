@@ -7,19 +7,28 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 from typing import Any, Text, Dict, List
-from rasa_core_sdk import Action
+from rasa_sdk import Action
 from rasa_sdk import Tracker
 from rasa_sdk.executor import CollectingDispatcher
+import datetime
 #from rasa.sdk_events import SlotSet
 
-class ActionCheckWeather(Action):
+class Action_Return_time(Action):
    def name(self) -> Text:
-      return "action_check_weather"
+      return "action_return_time"
 
    def run(self,
            dispatcher: CollectingDispatcher,
            tracker: Tracker,
            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-      dispatcher.utter_message("Hello World! from custom action")
+      tim=tracker.get_slot("time")
+      tim=int(tim)
+      now=datetime.datetime.now()
+      final_time=now.hour+tim
+      if(final_time>12):
+         dispatcher.utter_message("Sure, I have scheduled a cleaning for {} pm today".format(final_time-12))
+      else:
+         dispatcher.utter_message("Sure, I have scheduled a cleaning for {} am today".format(final_time))
+
       return []
